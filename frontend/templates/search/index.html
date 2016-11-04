@@ -1,0 +1,32 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid ">
+        <div class="collapse navbar-collapse ">
+            <div class="input-group note-search-group">
+                <span class="input-group-btn">
+                    {% if data.page_view == true %}
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option_pages" autocomplete="off" data-toggle="tooltip" title="View as pages" checked> Pages
+                    </label>
+                    <label class="btn btn-default">
+                       <input type="radio" name="options" id="option_list" autocomplete="off" data-toggle="tooltip" title="View as endless list" > List
+                    </label>
+                    {% else %}
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option_pages" autocomplete="off" data-toggle="tooltip" title="View as pages"> Pages
+                    </label>
+                    <label class="btn btn-default">
+                       <input type="radio" name="options" id="option_list" autocomplete="off" data-toggle="tooltip" title="View as endless list" checked> List
+                    </label>
+                    {% endif %}
+                </span>
+
+                <input type="text" class="form-control input-search" id="note-in-search" placeholder="Search ..." value={{ data.search }}>
+                <span class="input-group-btn">
+                    <button id="note-btn-add" class="btn btn-default button-search-corr" type="submit" data-toggle="tooltip" title="Add new note">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div><!-- /.input-group -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</div><!-- /.navbar-default -->

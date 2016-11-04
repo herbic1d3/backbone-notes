@@ -1,0 +1,36 @@
+body {
+  padding-top: 50px;
+}
+
+.note-search-group {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+    width: 700px;
+    padding-top: 6px;
+}
+
+.note-item-group {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+    width: 700px;
+}
+
+.note-layout-list-scroll {
+    overflow: scroll;
+    height: 200px;
+}
+
+.input-search {
+  height: 36px
+}
+
+.button-search-corr {
+  height: 36px
+}
+
+.pagination .active { 
+    background:#DDDDDD;
+}
+

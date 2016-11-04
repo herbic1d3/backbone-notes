@@ -1,0 +1,41 @@
+<div class="container-fluid " id="note-item-element">
+    <hr>
+    <div class="panel panel-default note-item-group">
+        <div class="panel-heading">
+            <div class="input-group">
+                {% if single == true %}
+                    {% if item.id != 0 %}
+                        <span class="input-group-btn">
+                            <button id="note-btn-remove" data-id="{{ item.id }}" type="submit" class="btn btn-default" data-toggle="tooltip" title="Remove note">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </span>
+                    {% endif %}
+                <input id="note-title" type="text" class="form-control" placeholder="Empty title ..." value={{ item.get("title")}}>
+                {% else %}
+                <input id="note-title" type="text" class="form-control" placeholder="Empty title ..." value={{ item.get("title")}} readonly='true'>
+                {% endif %}
+                {% if single == true %}
+                <span class="input-group-btn">
+                    <button id="note-btn-save" data-id="{{ item.id }}" type="submit" class="btn btn-default" data-toggle="tooltip" title="Save note">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </span>
+                {% else %}
+                <span class="input-group-btn">
+                    <button id="note-btn-edit" data-id="{{ item.id }}" type="submit" class="btn btn-default" data-toggle="tooltip" title="Edit note">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                </span>
+                {% endif %}
+            </div><!-- /input-group -->
+        </div>
+        <div class="panel-body" id="item-text">
+            {% if single == true %}
+            <textarea id='note-text' class="form-control " rows="5" placeholder="Empty note">{{ item.get("note") }}</textarea>
+            {% else %}
+            <textarea id='note-text' class="form-control " rows="5" placeholder="Empty note" readonly>{{ item.get("note") }}</textarea>
+            {% endif %}
+        </div>
+    </div>
+</div><!-- /.container-fluid -->
